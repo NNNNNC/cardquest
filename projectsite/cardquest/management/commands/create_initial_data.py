@@ -70,9 +70,8 @@ class Command(BaseCommand):
         card20 = PokemonCard(name= "Deoxys",rarity= "Rare",hp= 50,card_type= "Pyschic",attack= "Cosmic Power",
                             description= "An alien-like, bipedal Pokemon that has four forms. Each focused on a different stat." ,
                             weakness= "Dark" ,card_number= 186 ,release_date="2004-11-18", evolution_stage= "Basic" ,abilities= "Pressure")
-        
-        pokemon_cards = [card1,card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20]
-        for card in pokemon_cards:
+        cards = [card1, card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card15,card16,card17,card18,card19,card20]
+        for card in cards:
             card.save()
         self.stdout.write(self.style.SUCCESS('Successfully created Pokemon Cards.'))
 
@@ -87,7 +86,6 @@ class Command(BaseCommand):
         trainer8 = Trainer(name="Aaron" ,birthdate= "2002-10-06" ,location= "Sinoh Region" ,email= "aaronelitefor@pokemon.com")
         trainer9 = Trainer(name="Ronald",birthdate= "2003-06-27",location= "Buncag Grounds",email= "ronaldpogi@pokemon.com")
         trainer10 = Trainer(name="Cedric" ,birthdate= "2004-06-02" ,location= "Bunkhose" ,email= "cedric@pokemon.com")
-        
         trainers = [trainer1, trainer2, trainer3, trainer4, trainer5, trainer6, trainer7, trainer8, trainer9, trainer10]
         for trainer in trainers:
             trainer.save()

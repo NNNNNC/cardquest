@@ -3,8 +3,9 @@ from django.db import models
 # Create your models here.
 class BaseModel(models.Model):
     created_at = models.DateTimeField(
-        auto_now_add=True,db_index=True)
+        auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True)
+
     class Meta:
         abstract = True
 
@@ -57,8 +58,8 @@ class PokemonCard(BaseModel):
     release_date = models.DateField(null=True, blank=True)
     evolution_stage = models.CharField(max_length=250, null=True, blank=True)
     abilities = models.CharField(max_length=250, null=True, blank=True)
-    
-    def __str__(self):
+
+    def __str__(self) :
         return self.name
 
 class Collection(BaseModel):
@@ -66,5 +67,5 @@ class Collection(BaseModel):
     trainer = models.ForeignKey(Trainer, blank=True, null=True, on_delete=models.CASCADE)
     collection_date = models.DateField()
 
-    def __str__(self):
-        return f'{self.trainer} - {self.card}'
+    def __str__(self) :
+        return f"{self.trainer.name} {self.card.name}"

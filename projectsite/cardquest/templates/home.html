@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
-    <title>{% block title %} CardQuest Master {% endblock %}</title>
+    <title>{%block title%} CardQuest Master {%endblock%}</title>
   </head>
   <body>
     <!--NAVBAR-->
     <section class="navbar">
-      <a href="home.html" class="btn" id="active"> Home </a>
+      <a href="{% url 'home' %}" class="btn" id="active"> Home </a>
       <a href="{% url 'trainer-list' %}" class="btn"> Trainer </a>
       <a href="pokemon-card.html" class="btn"> Pokemon Card </a>
       <a href="collection.html" class="btn"> Collection </a>
@@ -24,10 +24,16 @@
 
     <!--CONTENT-->
     <main>
-        {% block content %}
-
-        {% endblock %}
+      {%block content%}
+      <div class="homepage">
+        <img src="../static/images/pokeball.png" alt="pokemon" class="pokeball">
+        <h1>Welcome Pokemon Center</h1>
+      </div>
+      {%endblock%}
     </main>
+      
+    
+
     {% include 'includes/footer.html' %}
   </body>
 </html>
